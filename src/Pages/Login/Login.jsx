@@ -76,9 +76,9 @@ export default function Login() {
       localStorage.setItem("token", token);
       getUserData();
       navigate("/posts");
-    } catch ({ response: { data: { error } } }) {
-      // console.log(error);
-      toast.error(error);
+    } catch (error) {
+      // console.log(error.response.data.error);
+      toast.error(error.response.data.error);
       setIsLoading(false);
     }
   }
