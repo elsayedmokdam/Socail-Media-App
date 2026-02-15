@@ -1,8 +1,8 @@
-import { Link, NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import bgImage from "../../assets/signup-bg-DGRfriy9.png";
 import image from "../../assets/me.jpg";
 import { Heart } from "iconsax-reactjs";
-import { Button, Form, Input } from "@heroui/react";
+import { Form, Input } from "@heroui/react";
 import { useForm } from "react-hook-form";
 import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -77,7 +77,7 @@ export default function Login() {
       getUserData();
       navigate("/posts");
     } catch ({ response: { data: { error } } }) {
-      console.log(response);
+      // console.log(response);
       toast.error(error);
       setIsLoading(false);
     }
